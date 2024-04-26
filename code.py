@@ -6,13 +6,13 @@ import usb_hid
 from adafruit_hid.keyboard import Keyboard
 
 # comment out these lines for non_US keyboards
-from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS as KeyboardLayout
-from adafruit_hid.keycode import Keycode
+# from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS as KeyboardLayout
+# from adafruit_hid.keycode import Keycode
 
 # uncomment these lines for non_US keyboards
 # replace LANG with appropriate language
-#from keyboard_layout_win_LANG import KeyboardLayout
-#from keycode_win_LANG import Keycode
+from keyboard_layout_win_fr import KeyboardLayout
+from keycode_win_fr import Keycode
 
 import supervisor
 
