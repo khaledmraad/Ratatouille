@@ -51,5 +51,3 @@ attrib +h +s +r Broo
 
 
 Restart-Service sshd
-
-calc
