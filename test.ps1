@@ -51,3 +51,6 @@ attrib +h +s +r Broo
 
 
 Restart-Service sshd
+
+exit
+
