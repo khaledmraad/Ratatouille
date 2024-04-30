@@ -17,7 +17,7 @@ $ip = $ipConfigOutput | Select-String -Pattern 'Adresse IPv4.*: ((\d{1,3}\.){3}\
 
 # If IPv4 address is found, proceed with sending the email
 if ($ip) {
-    $body = "This is a test email sent via PowerShell, ched addresset ip: $ip :D ."
+    $body = "MAY the force be with you \n This is a test email sent via PowerShell, ched addresset ip: $ip :D ."
     # Send the email here
 } else {
     $body = "IPv4 address not found."
