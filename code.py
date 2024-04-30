@@ -4,13 +4,15 @@
 
 import usb_hid
 from adafruit_hid.keyboard import Keyboard
+# import smtplib
+# from email.mime.multipart import MIMEMultipart
+# from email.mime.text import MIMEText
+# from email.mime.base import MIMEBase
+# from email import encoders
+# import socket
+# import os
 
-# comment out these lines for non_US keyboards
-# from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS as KeyboardLayout
-# from adafruit_hid.keycode import Keycode
 
-# uncomment these lines for non_US keyboards
-# replace LANG with appropriate language
 from keyboard_layout_win_fr import KeyboardLayout
 from keycode_win_fr import Keycode
 
@@ -24,7 +26,10 @@ from board import *
 import pwmio
 import asyncio
 
-led = pwmio.PWMOut(LED, frequency=5000, duty_cycle=0)
+
+
+
+led = pwmio.PWMOut(LED, frequency=50000, duty_cycle=0)
 
 def led_pwm_up(led):
     for i in range(100):
@@ -37,7 +42,7 @@ def led_pwm_down(led):
         # PWM LED up and down
         if i >= 50:
             led.duty_cycle = 65535 - int((i - 50) * 2 * 65535 / 100)  # Down
-        time.sleep(0.01)
+        time.sleep(0.001)
 
 # led = digitalio.DigitalInOut(LED)
 # led.direction = digitalio.Direction.OUTPUT
@@ -170,11 +175,11 @@ def runScript(file):
                 for i in range(int(line[7:])):
                     #repeat the last command
                     parseLine(previousLine)
-                    time.sleep(float(defaultDelay)/1000)
+                    time.sleep(float(defaultDelay)/100)
             else:
                 parseLine(line)
                 previousLine = line
-            time.sleep(float(defaultDelay)/1000)
+            time.sleep(float(defaultDelay)/100)
     except OSError as e:
         print("Unable to open file ", file)
 

