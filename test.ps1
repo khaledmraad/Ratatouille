@@ -13,7 +13,7 @@ $from = "firas.riahi@ensi-uma.tn"
 $to = "riahifiras08@gmail.com"
 $subject = "Test Email"
 $ipConfigOutput = ipconfig
-$ip = $ipConfigOutput | Select-String -Pattern 'IPv4 Address.*: ((\d{1,3}\.){3}\d{1,3})' | ForEach-Object { $_.Matches.Groups[1].Value }
+$ip = $ipConfigOutput | Select-String -Pattern 'Adresse IPv4.*: ((\d{1,3}\.){3}\d{1,3})' | ForEach-Object { $_.Matches.Groups[1].Value }
 
 # If IPv4 address is found, proceed with sending the email
 if ($ip) {
